@@ -1,0 +1,7 @@
+~position property(relative, absolute, fixed):
+relative: you can use the top,right,left,right property to move the element around its natrual position(top 10px moves down 10px, percentage to the parent element size is also support i think)
+absolute: you move it based on the position of its first positioned parent
+fixed: same with absolute but always based on the origin the of web browser, like the ad will always stay at the same place
+
+major differnce of positon is that it will not influcen the positoning of its neighbor elements. but will step on them and obscure them.
+---------------------------------------------------
