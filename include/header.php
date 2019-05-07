@@ -50,3 +50,5 @@ else
 			</a>
 		</nav>
 	</div>
+
+	<div class="wrapper"> <!--this div is closed in index.php-->
