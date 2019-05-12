@@ -33,12 +33,6 @@ if(isset($_POST['post'])){
 
 		</form>
 
-		<!-- dont need this here as it's moved to ajax call-->
-		<!--<?php
-			$post = new Post($con, $userLoggedIn);
-			$post->loadPostsFriends();
-		?>-->
-
 		<div class="posts_area"></div>
 		<img id="#loading" src="assets/images/icons/loading.gif">
 	</div>
@@ -62,12 +56,21 @@ if(isset($_POST['post'])){
 		});
 
 		$(window).scroll(function(){
-			var height = $('.posts_area').height(0); //Div containing posts
-			var scroll_top = $(this).scrollTop(0);
-			var page = $('.posts_area').find('.nextPage').val(0);
-			var noMorePosts = $('post_area').find('.noMorePosts').val();
+			var height = $('.posts_area').height(); //Div containing posts
+			var scroll_top = $(this).scrollTop();
+			var page = $('.posts_area').find('.nextPage').val();
+			var noMorePosts = $('.posts_area').find('.noMorePosts').val();
 
-			if((document.body.scrollhHeight == document.body.scrollTop + window.innerHeight) && noMorePosts == 'false') //scolled to the bottom of the page.
+			//Big question:
+			//1.var height = $('.posts_area').height()/var scroll_top = $(this).scrollTop(); not referenced.
+			//2.document.body.scrollTop always return 0, have to use document.documentElement.scrollTop
+			//3.sometimes when I scrolled down to the bottom, document.documentElement.scrollTop + window.innerHeight is slightly bigger than document.body.scrollHeight
+			//4.here is the concept, indeed this is detecting if the user has scrolled all the way down to the bottom
+			//document.body.scrollHeight: the height of the the body, if there's a lot of content than it will be bigger than the window height
+			//document.body.scrollTop: how much of document.body.scrollHeight is scrolled away....
+			//window.innerHeight: height of the viewport/window height
+			//then do the math you should understand the idea
+			if((document.body.scrollHeight == /*document.body.scrollTop*/document.documentElement.scrollTop + window.innerHeight) && noMorePosts == 'false') //scrolled to the bottom of the page.
 			{
 				$('#loading').show();
 				$.ajax({
@@ -84,8 +87,10 @@ if(isset($_POST['post'])){
 		   				$('.posts_area').append(response);
 		   			}
 				});
-		     }
-		});
+		     } // End if
+
+		     return false;
+		}); // End (window).scroll(function())
 	});
 	</script>
 	</div>
