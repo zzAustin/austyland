@@ -55,6 +55,7 @@ if(isset($_POST['post'])){
 		   	}
 		});
 
+		//New request when scrolled down to the bottom
 		$(window).scroll(function(){
 			var height = $('.posts_area').height(); //Div containing posts
 			var scroll_top = $(this).scrollTop();
@@ -82,7 +83,6 @@ if(isset($_POST['post'])){
 		   			success: function(response){
 		   				$('.post_area').find('.nextPage').remove(); //Removes current. nextpage
 		   				$('.post_area').find('.noMorePosts').remove(); //Removes current. noMorePosts
-
 		   				$('#loading').hide();
 		   				$('.posts_area').append(response);
 		   			}
