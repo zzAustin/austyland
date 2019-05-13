@@ -34,7 +34,7 @@ if(isset($_POST['post'])){
 		</form>
 
 		<div class="posts_area"></div>
-		<img id="#loading" src="assets/images/icons/loading.gif">
+		<img id="loading" src="assets/images/icons/loading.gif">
 	</div>
 	<script>
 	var userLoggedIn = '<?php echo $userLoggedIn; ?>';
@@ -61,7 +61,6 @@ if(isset($_POST['post'])){
 			var scroll_top = $(this).scrollTop();
 			var page = $('.posts_area').find('.nextPage').val();
 			var noMorePosts = $('.posts_area').find('.noMorePosts').val();
-
 			//Big question:
 			//1.var height = $('.posts_area').height()/var scroll_top = $(this).scrollTop(); not referenced.
 			//2.document.body.scrollTop always return 0, have to use document.documentElement.scrollTop
@@ -81,8 +80,8 @@ if(isset($_POST['post'])){
 					cache:false,
 
 		   			success: function(response){
-		   				$('.post_area').find('.nextPage').remove(); //Removes current. nextpage
-		   				$('.post_area').find('.noMorePosts').remove(); //Removes current. noMorePosts
+		   				$('.posts_area').find('.nextPage').remove(); //Removes current. nextpage
+		   				$('.posts_area').find('.noMorePosts').remove(); //Removes current. noMorePosts
 		   				$('#loading').hide();
 		   				$('.posts_area').append(response);
 		   			}
