@@ -1,26 +1,33 @@
 <!DOCTYPE html>
+<?php
+require 'config/config.php';
+include("includes/classes/User.php");
+include("includes/classes/Post.php");
+
+
+if(isset($_SESSION['username'])){//'username is set when the user has logged in'
+	$userLoggedIn = $_SESSION['username'];
+	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
+	$user = mysqli_fetch_array($user_details_query);
+}
+else
+{
+	header("Location: register.php");
+}
+?>
 <html>
 <head>
 	<title></title>
 	<link rel = "stylesheet" type="text/css" href = "assets/css/style.css">
 </head>
 <body>
-	<?php
-	require 'config/config.php';
-	include("includes/classes/User.php");
-	include("includes/classes/Post.php");
-
-
-	if(isset($_SESSION['username'])){//'username is set when the user has logged in'
-		$userLoggedIn = $_SESSION['username'];
-		$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
-		$user = mysqli_fetch_array($user_details_query);
+	<style type = "text/css">
+	*{
+		font-size: 12px;
+		font-family: Arial, Helvetica, Sans-serif;
 	}
-	else
-	{
-		header("Location: register.php");
-	}
-	?>
+	</style>
+
 	<script>
 		function toggle(){
 			var element = document.getElementById("comment_section");
@@ -148,6 +155,9 @@
 			</div>
 			<?php
 		}
+	}
+	else{
+		echo "<center><br><br>No Comments to Show!</center>";
 	}
 	?>
 
