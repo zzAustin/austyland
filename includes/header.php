@@ -1,5 +1,8 @@
 <?php
 require 'config/config.php';
+include("includes/classes/Post.php");
+include("includes/classes/User.php");
+
 if(isset($_SESSION['username'])){//'username is set when the user has logged in'
 	$userLoggedIn = $_SESSION['username'];
 	$user_details_query = mysqli_query($con, "SELECT * FROM users WHERE username='$userLoggedIn'");
@@ -42,7 +45,7 @@ else
 			<a href="#">
 				<i class="far fa-bell"></i>
 			</a>
-			<a href="#">
+			<a href="requests.php">
 				<i class="fas fa-users"></i>
 			</a>
 			<a href="#">
