@@ -1,7 +1,7 @@
 <?php
 require 'config/config.php';
-include("includes/classes/Post.php");
 include("includes/classes/User.php");
+include("includes/classes/Post.php");
 
 if(isset($_SESSION['username'])){//'username is set when the user has logged in'
 	$userLoggedIn = $_SESSION['username'];
@@ -20,6 +20,8 @@ else
 	<!--Javascript-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src = "assets/js/bootstrap.js"></script>
+	<script src = "assets/js/austyland.js"></script>
+
 
 	<!--CSS-->
 	<link rel = "stylesheet" type="text/css" href = "assets/css/bootstrap.css">

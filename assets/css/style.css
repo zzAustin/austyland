@@ -288,3 +288,23 @@ textarea: focus{
 	border: none;
 	color: #ffff;
 }
+
+#accept_button{
+	width:20%;
+	height: 28px;
+	border-radius: 5px;
+	margin: 5px;
+	border: none;
+	color: #fff;
+	background-color: #2ecc71;
+}
+
+#ignore_button{
+	width:20%;
+	height: 28px;
+	border-radius: 5px;
+	margin: 5px;
+	border: none;
+	color: #fff;
+	background-color: #e74c3c;
+}
