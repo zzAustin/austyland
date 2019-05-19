@@ -69,6 +69,7 @@ nav a:hover{
 	padding: 0 10px;
 	width: 75%;
 	min-width: 950px;
+	/*z-index: -1;*/ /*improvised by my self...other it will scroll on top of top_bar,but with it i covers the modal!!!*/
 }
 
 .column{
@@ -307,4 +308,21 @@ textarea: focus{
 	border: none;
 	color: #fff;
 	background-color: #e74c3c;
+}
+
+.delete_button{
+	height: 22px;
+	width: 22px;
+	padding: 0;
+	float: right;
+	border-radius: 4px;
+	right: -15px;
+	position: relative;
+}
+
+.profile_main_column{
+	min-width: 675px;
+	float: left;
+	width: 70%;
+	z-index: -1;
 }
