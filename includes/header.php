@@ -22,12 +22,15 @@ else
 	<script src = "assets/js/bootstrap.js"></script>
 	<script src = "assets/js/bootbox.min.js"></script>
 	<script src = "assets/js/austyland.js"></script>
+	<script src = "assets/js/jquery.jcrop.js"></script>
+	<script src = "assets/js/jcrop_bits.js"></script>
 
 
 	<!--CSS-->
 	<link rel = "stylesheet" type="text/css" href = "assets/css/bootstrap.css">
 	<link rel = "stylesheet" type="text/css" href = "assets/css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link  rel="stylesheet" href="assets/css/jquery.Jcrop.css" type="text/css">
 </head>
 <body>
 

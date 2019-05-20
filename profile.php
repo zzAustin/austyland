@@ -68,6 +68,11 @@ if(isset($_POST['respond_request'])){
 		<!--<input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something">--><!--don't put this input inside the form-->
 		<input type="submit" class="deep_blue" data-toggle="modal" data-target="#post_form" value="Post Something">
 
+		<?php
+			echo '<div class="profile_info_bottom">';
+			echo $logged_in_user_obj->getMutualFriends($username) . " Mutual Friends";
+			echo '</div>';
+		?>
 	</div>
 
 
