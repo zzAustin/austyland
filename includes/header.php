@@ -2,6 +2,7 @@
 require 'config/config.php';
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
+include("includes/classes/Message.php");
 
 if(isset($_SESSION['username'])){//'username is set when the user has logged in'
 	$userLoggedIn = $_SESSION['username'];
