@@ -29,6 +29,21 @@ $(document).ready(function() {
 });
 
 
+$(document).click(function(e){
+	if(e.target.class != "search_results" && e.target.id != "search_text_input"){
+		$(".search_results").html("");
+		$('.search_results_footer').html("");
+		$('.search_results_footer').toggleClass("search_results_footer_empty");
+		$('.search_results_footer').toggleClass("search_results_footer");
+	}
+
+	if(e.target.class != "dropdown_data_window"){
+		$(".dropdown_data_window").html("");
+		$(".dropdown_data_window").css({"padding" : "0px", "height" : "0px"});
+	}
+
+});
+
 function getUsers(value, user){
 	$.post("includes/handlers/ajax_friend_search.php", {query:value, userLoggedIn:user}, function(data){
 		$(".results").html(data);
@@ -79,7 +94,7 @@ function getLiveSearchUsers(value, user){
 		$('.search_results').html(data);
 		$('.search_results_footer').html("<a href='search.php?q=" + value +"'>See all results</a>");
 
-		if(data = ""){
+		if(data == ""){
 			$('.search_results_footer').html("");
 			$('.search_results_footer').toggleClass("search_results_footer_empty");
 			$('.search_results_footer').toggleClass("search_results_footer");
