@@ -15,6 +15,14 @@
 			return $this->user['username'];
 		}
 
+		public function getNumberOfFriendRequests(){
+			$username = $this->user['username'];
+			
+			//note if you use $query here it will conflict with the $query in getNumPosts which will cause elusive issue!!!!
+			$query_nb_requests = mysqli_query($this->con, "SELECT * FROM friend_requests WHERE user_to='$username'");
+			return mysqli_num_rows($query_nb_requests);
+		}
+
 		public function getNumPosts(){
 			$username = $this->user['username'];
 			$query = mysqli_query($this->con, "SELECT num_posts FROM users WHERE username='$username'");
