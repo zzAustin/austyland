@@ -591,3 +591,10 @@ textarea: focus{
 	border-radius: 5px;
 	color: #fff;
 }
+
+.postedImage img{
+	max-height: 380px;
+	max-width: 100%;
+	display: block;
+	margin: 5px auto;
+}
