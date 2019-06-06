@@ -73,6 +73,7 @@ nav a:hover{
 }
 
 .column{
+	/*position: relative;*/
 	background-color: #fff;
 	padding: 10px;
 	border: 10px;
