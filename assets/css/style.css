@@ -511,10 +511,10 @@ textarea: focus{
 	border: thin solid #e5e5e5;
 	cursor: pointer;
 	float: left;
-	height: 23;
+	height: 23px;
 	text-align: center;
 	width: 50px;
-	border-top-right-radius: 3px
+	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
 }
 
